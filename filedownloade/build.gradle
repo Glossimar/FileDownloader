@@ -34,8 +34,8 @@ dependencies {
 
 version = "1.0.1"
 
-def siteUrl = 'https://github.com/yanzhenjie/AndServer' // 项目主页。
-def gitUrl = 'git@github.com:yanzhenjie/AndServer.git' // Git仓库的url。
+def siteUrl = 'https://github.com/SunWanQi/FileDownloader' // 项目主页。
+def gitUrl = 'git@github.com:SunWanQi/FileDownloader.git' // Git仓库的url。
 
 // 唯一包名，比如compile 'com.yanzhenjie:andserver:1.0.1'中的     com.yanzhenjie就是这里配置的。
 group = "com.glossimarWanWan"
