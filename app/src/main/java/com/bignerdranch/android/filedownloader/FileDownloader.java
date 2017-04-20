@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
+import android.util.Log;
 
 /**
  * Created by LENOVO on 2017/4/21.
@@ -35,6 +36,7 @@ public class FileDownloader {
         this.fileType = fileType;
     }
     public void beginDownload(){
+        Log.d("findNull", "beginDownload: " + downloadBinder);
         downloadBinder.startDownload(downloadUrl, fileType);
     }
 

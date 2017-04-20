@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
+import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by LENOVO on 2017/4/21.
@@ -35,7 +37,13 @@ public class FileDownloader {
         this.fileType = fileType;
     }
     public void beginDownload(){
-        downloadBinder.startDownload(downloadUrl, fileType);
+        if (downloadBinder != null){
+            Log.d("findNull", "beginDownload: " + downloadBinder);
+            downloadBinder.startDownload(downloadUrl, fileType);
+        } else {
+            Log.d("FileDownloader.", "beginDownload: FileDownload's binder is null");
+        }
+
     }
 
     public void pauseDownload() {
