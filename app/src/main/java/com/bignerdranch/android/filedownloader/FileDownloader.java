@@ -41,6 +41,7 @@ public class FileDownloader {
     }
 
     public static int getDownLoadProgress(){
+        Log.d("OpenSourceLib_FileLoad", "getDownLoadProgress:THE vVALE OF FILE DOWNLOAD IS " + DownloadTask.downloadProgress);
         return DownloadTask.downloadProgress;
     }
 
