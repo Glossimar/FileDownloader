@@ -18,7 +18,8 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     public static final int TYPE_FAILED = 1;
     public static final int TYPE_PAUSED = 2;
     public static final int TYPE_CANCLED=3;
-
+    public static int progressDownload = 0;
+    public static boolean downloadSuccess = false;
     private DownloadListener listener;
 
     private boolean isCanceled = false;
@@ -113,6 +114,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
         if (progress > lastProgress) {
             listener.onProgress(progress);
             lastProgress = progress;
+            progressDownload = progress;
         }
     }
 
@@ -120,6 +122,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     protected void onPostExecute(Integer integer) {
         switch (integer) {
             case TYPE_SUCCESS:
+                downloadSuccess = true;
                 listener.onSuccess();
                 break;
             case TYPE_FAILED:

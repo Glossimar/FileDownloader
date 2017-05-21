@@ -7,6 +7,8 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by LENOVO on 2017/4/21.
  */
@@ -57,8 +59,14 @@ public class FileDownloader {
     public ServiceConnection  getServiceConnection() {
         return connection;
     }
+
     public static void setActivity(Activity activity){
         activityStatic = activity;
+    }
+
+    public static int getFileDownloadprogress() {
+        Log.d(TAG, "getFileDownloadprogress: THE VALUE OF FILE DOWNLOADING NOW IS " + DownloadTask.progressDownload);
+        return DownloadTask.progressDownload;
     }
 }
 
