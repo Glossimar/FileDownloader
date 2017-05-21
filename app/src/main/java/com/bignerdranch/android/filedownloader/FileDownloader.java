@@ -40,6 +40,10 @@ public class FileDownloader {
         downloadBinder.startDownload(downloadUrl, fileType);
     }
 
+    public static int getDownLoadProgress(){
+        return DownloadTask.downloadProgress;
+    }
+
     public void pauseDownload() {
         downloadBinder.pauseDownload();
     }
